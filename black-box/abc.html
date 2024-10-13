@@ -1,0 +1,329 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Scheduling</title>
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            .container {
+                width: 300px;
+                margin: 0 auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            h2 {
+                margin-bottom: 10px;
+            }
+
+            .section {
+                margin-bottom: 7px;
+            }
+
+            .section label {
+                display: block;
+                margin-bottom: 1px;
+            }
+
+            .input-group {
+                display: flex;
+                align-items: center;
+            }
+
+            .input-group input,
+            .input-group select {
+                padding: 3px;
+                margin-right: 3px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+            }
+
+            .input-group button {
+                padding: 8px 12px;
+                border: none;
+                background-color: #4caf50;
+                color: white;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            .input-group button:hover {
+                background-color: #45a049;
+            }
+
+            .info {
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 3px;
+                margin-bottom: 10px;
+            }
+
+            .info i {
+                margin-right: 5px;
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .buttons button {
+                padding: 10px 20px;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+            .buttons button:first-child {
+                background-color: #ccc;
+                color: #333;
+            }
+
+            .buttons button:last-child {
+                background-color: #4caf50;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>When and where will it take place?</h2>
+
+            <div class="section">
+                <label for="details">Details</label>
+                <div class="input-group">
+                    <input type="text" id="details" placeholder="Details" />
+                    <input type="text" id="date-location" placeholder="Date and location" />
+                    <input type="text" id="guests" placeholder="Guests" />
+                </div>
+            </div>
+
+            <div class="section">
+                <label for="date">Date</label>
+                <div class="input-group">
+                    <input type="date" id="date" value="2024-01-06" />
+                    <label for="from">from</label>
+                    <input type="time" id="from" value="13:00" />
+                    <label for="to">to</label>
+                    <input type="time" id="to" value="17:00" />
+                </div>
+            </div>
+
+            <div class="section">
+                <label for="frequency">Frequency</label>
+                <div class="input-group">
+                    <input type="radio" id="once" name="frequency" value="once" checked />
+                    <label for="once">Only once</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="every" name="frequency" value="every" />
+                    <label for="every">Every</label>
+                    <input type="number" id="every-count" value="0" />
+                    <button>+</button>
+                    <button>-</button>
+                    <select id="every-unit">
+                        <option value="weeks">weeks</option>
+                        <option value="months">months</option>
+                        <option value="years">years</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="end-after">End after</label>
+                    <select id="end-after">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                    <button>+</button>
+                    <button>-</button>
+                    <select id="end-after-unit">
+                        <option value="occurences">occurences</option>
+                    </select>
+                </div>
+                <div class="info">
+                    <i></i>
+                    <span>10 events will be created at the following dates:</span>
+                    <div class="dates">
+                        <span>Friday, January 6, 2024</span>
+                        <span>Wednesday, F...</span>
+                    </div>
+                    <button>+8</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <label for="location">Location</label>
+                <div class="input-group">
+                    <input type="radio" id="physical" name="location" value="physical" />
+                    <label for="physical">Physical</label>
+                </div>
+                <div class="input-group">
+                    <input type="radio" id="virtual" name="location" value="virtual" checked />
+                    <label for="virtual">Virtual</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="meeting-link" placeholder="Link to the meeting" />
+                    <button>Paste</button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button>Back</button>
+                <button>Cancel</button>
+                <button>Next</button>
+            </div>
+        </div>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f2f2f2;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .input-group label {
+            width: 150px;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .guest-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .guest-item {
+            margin: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .guest-item img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+        .guest-item .close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #f00;
+            color: #fff;
+            padding: 3px 5px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #3e8e41;
+        }
+        .cancel-button {
+            background-color: #f44336;
+        }
+        .cancel-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Who should join it?</h2>
+        <div class="input-group">
+            <label for="details">Details:</label>
+            <input type="text" id="details" placeholder="Details">
+        </div>
+        <div class="input-group">
+            <label for="date">Date and Location:</label>
+            <input type="text" id="date" placeholder="Date and Location">
+        </div>
+        <h3>Guests</h3>
+        <div class="input-group">
+            <input type="text" id="guest-name" placeholder="Name or email address">
+        </div>
+        <div class="guest-list">
+            <div class="guest-item">
+                <img src="https://via.placeholder.com/50" alt="Guest 1">
+                <span class="close">X</span>
+            </div>
+            <div class="guest-item">
+                <img src="https://via.placeholder.com/50" alt="Guest 2">
+                <span class="close">X</span>
+            </div>
+            <div class="guest-item">
+                <img src="https://via.placeholder.com/50" alt="Guest 3">
+                <span class="close">X</span>
+            </div>
+            <div class="guest-item">
+                <img src="https://via.placeholder.com/50" alt="Guest 4">
+                <span class="close">X</span>
+            </div>
+            <div class="guest-item">
+                <img src="https://via.placeholder.com/50" alt="Guest 5">
+                <span class="close">X</span>
+            </div>
+            <button class="add-guest" type="button">Add Guest</button>
+        </div>
+        <div class="guests-can">
+            <label for="consult-guests">
+                <input type="checkbox" id="consult-guests" checked>
+                Consult guests list
+            </label>
+            <label for="add-invitees">
+                <input type="checkbox" id="add-invitees">
+                Add other invitees
+            </label>
+            <label for="suggest-date">   Suggest another date</label><input type="checkbox" id="suggest-date">
+                
+             
+        </div>
+        <button type="button">Save</button>
+        <button type="button" class="cancel-button">Cancel</button>
+    </div>
+</body>
+</html>
